@@ -1,16 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 
 import {
   AppBar,
-  Box,
-  Button,
   Container,
+  Divider,
   FormControl,
   Grid,
   InputLabel,
   makeStyles,
   MenuItem,
-  Paper,
   Select,
   Toolbar,
   Typography
@@ -18,6 +16,7 @@ import {
 
 import Preloader from './components/Preloader';
 import CardStats from './components/CardStats';
+import TableState from './components/TableState';
 import './style/style.scss';
 import useStyles from './style/materialStyles';
 
@@ -80,6 +79,7 @@ function App() {
             <CardStats title={`Casos em ${UF}`} state={UF} place_type="state"  />
           </Grid>
         </Grid>
+        <Divider />
         <Grid
           container
           spacing={3}
@@ -87,11 +87,12 @@ function App() {
           justify="center"
           alignItems="center"
         >
-          {states.map(state =>
-            <Grid item xs={4} md={2}>
-              <CardStats key={state} title={`Casos em ${state}`} state={state} place_type="state" />
-            </Grid>
-          )}
+          <Grid item xs={12}>
+            <Typography variant="h6" style={{margin: '50px 0 30px'}}>
+              Estatísticas de todos os estados
+            </Typography>
+            <TableState uf="SP" />
+          </Grid>
         </Grid>
       </Container>
     </div>

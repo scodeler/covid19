@@ -2,14 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  Grid,
-  makeStyles,
   Paper,
-  Toolbar,
   Typography
 } from '@material-ui/core';
 
@@ -29,7 +22,7 @@ function CardStats(props){
   useEffect(() => {
     let queryString = 'is_last=true&';
     Object.keys(props).forEach(key => {
-      if(key != 'title'){
+      if(key !== 'title'){
         queryString += `${key}=${props[key]}&`;
       }
     });
@@ -47,13 +40,11 @@ function CardStats(props){
       let newData = { ...resultObject, time }
       fetchData(newData);
       handleLoading(false);
-      console.log(queryString);
     }
     getApiData();
   }, [params]);
 
   const classes = useStyles();
-  console.log(data);
   return(
     <Paper className={classes.paper}>
       {loading && <Preloader /> }
