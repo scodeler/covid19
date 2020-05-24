@@ -95,6 +95,10 @@ function App() {
           </Grid>
         </Grid>
       </Container>
+      
+      <Typography variant="body2" style={{ paddingBottom: '50px'}} color="textSecondary" align="center">
+        Desenvolvido em casa por Bruno Scodeler.
+      </Typography>
     </div>
   );
 }
