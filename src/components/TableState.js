@@ -41,7 +41,7 @@ function TableState(){
           {loading && <Preloader />}
           {!loading &&
             resultObject && resultObject.map(item =>
-              <TableRow>
+              <TableRow key={item.state}>
                 <TableCell>{item.state}</TableCell>
                 <TableCell>{item.confirmed}</TableCell>
                 <TableCell>{item.confirmed_per_100k_inhabitants}</TableCell>

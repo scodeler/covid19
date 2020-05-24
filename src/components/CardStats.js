@@ -21,7 +21,7 @@ function CardStats(props){
 
   useEffect(() => {
     let queryString = 'is_last=true&';
-    Object.keys(props).forEach(key => {
+    Object.keys(params).forEach(key => {
       if(key !== 'title'){
         queryString += `${key}=${props[key]}&`;
       }
@@ -42,7 +42,7 @@ function CardStats(props){
       handleLoading(false);
     }
     getApiData();
-  }, [params]);
+  }, [params, baseUrl, props]);
 
   const classes = useStyles();
   return(

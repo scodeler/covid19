@@ -7,16 +7,16 @@ import {
   FormControl,
   Grid,
   InputLabel,
-  makeStyles,
-  MenuItem,
+   MenuItem,
   Select,
   Toolbar,
   Typography
 } from '@material-ui/core';
 
-import Preloader from './components/Preloader';
+//import Preloader from './components/Preloader';
 import CardStats from './components/CardStats';
 import TableState from './components/TableState';
+import StateChart from './components/StateChart';
 import './style/style.scss';
 import useStyles from './style/materialStyles';
 
@@ -75,8 +75,8 @@ function App() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <CardStats title={`Casos em ${UF}`} state={UF} place_type="state"  />
+          <Grid item xs={12}>
+            <StateChart state={UF} />
           </Grid>
         </Grid>
         <Divider />
